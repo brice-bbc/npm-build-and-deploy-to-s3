@@ -61,8 +61,11 @@ registry=https://registry.npmjs.org/" > ~/.npmrc
 echo "Change directory to Source"
 cd $SOURCE_DIR
 
+echo "Install yarn"
+npm install --global yarn
+
 echo "Install parcel"
-npm install --global yarn parcel
+yarn global add parcel
 
 echo "Install all packages"
 yarn

@@ -62,7 +62,7 @@ echo "Change directory to Source"
 cd $SOURCE_DIR
 
 echo "Install parcel"
-npm install --global yarn
+npm install --global yarn parcel
 
 echo "Install all packages"
 yarn

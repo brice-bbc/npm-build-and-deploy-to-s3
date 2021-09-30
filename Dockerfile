@@ -7,4 +7,5 @@ RUN apk add --update nodejs npm
 RUN apk add --update npm
 
 ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]

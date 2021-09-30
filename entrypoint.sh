@@ -62,10 +62,10 @@ echo "Change directory to Source"
 cd $SOURCE_DIR
 
 echo "Install parcel"
-npm install parcel
+npm install yarn
 
 echo "Install all packages"
-npm i
+yarn
 
 echo "Build application"
 parcel build index.html

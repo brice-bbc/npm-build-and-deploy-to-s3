@@ -64,6 +64,9 @@ cd $SOURCE_DIR
 echo "Install yarn"
 npm install --global yarn
 
+echo "Install Node-gyp"
+yarn global add node-gyp
+
 echo "Install parcel"
 yarn global add parcel
 

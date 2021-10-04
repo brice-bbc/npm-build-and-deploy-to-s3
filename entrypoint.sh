@@ -61,17 +61,11 @@ registry=https://registry.npmjs.org/" > ~/.npmrc
 echo "Change directory to Source"
 cd $SOURCE_DIR
 
-echo "Install yarn"
-npm install --global yarn
-
 echo "Install Node-gyp"
-yarn global add node-gyp
-
-echo "Install parcel"
-yarn global add parcel
+npm i -g node-gyp parcel
 
 echo "Install all packages"
-yarn
+npm install
 
 echo "Build application"
 parcel build index.html

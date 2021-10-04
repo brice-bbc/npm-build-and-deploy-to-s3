@@ -62,6 +62,7 @@ echo "Change directory to Source"
 cd $SOURCE_DIR
 
 echo "Install dev dependencies and deps"
+npm --version
 npm ci --include=dev
 
 echo "Build application"

@@ -63,6 +63,7 @@ cd $SOURCE_DIR
 
 echo "Install dev dependencies and deps"
 npm --version
+echo $NODE_ENV
 npm ci --include=dev
 
 echo "Build application"

@@ -71,8 +71,8 @@ echo "Build application"
 npm run build
 
 if [ -d "$DIST_DIR" ]; then
-    echo "Copying Scene Controller to GSAAS Repo"
-    aws s3 sync ${DIST_DIR} s3://${AWS_S3_BUCKET}/scene-controller/ --exact-timestamps --delete --region ${AWS_DEFAULT_REGION} $*
+    echo "Copying app to S3"
+    aws s3 sync ${DIST_DIR} s3://${AWS_S3_BUCKET}/${AWS_S3_BUCKET_DIR}/ --exact-timestamps --delete --region ${AWS_DEFAULT_REGION} $*
 fi
 
 echo "Cleaning up things"

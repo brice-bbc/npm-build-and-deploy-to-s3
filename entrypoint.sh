@@ -61,6 +61,9 @@ registry=https://registry.npmjs.org/" > ~/.npmrc
 echo "Change directory to Source"
 cd $SOURCE_DIR
 
+echo "Install dev dependencies"
+npm install --only=dev
+
 echo "Install all packages"
 npm install
 

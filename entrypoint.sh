@@ -62,12 +62,13 @@ echo "Change directory to Source"
 cd $SOURCE_DIR
 
 echo "Install dev dependencies and deps"
-npm --version
-echo $NODE_ENV
 npm ci --include=dev
 
+echo "setup PATH"
+export PATH=$PATH:$SOURCE_DIR/node_modules/.bin
+
 echo "Build application"
-parcel build
+npm build
 
 if [ -d "$DIST_DIR" ]; then
     echo "Copying Scene Controller to GSAAS Repo"

@@ -68,7 +68,7 @@ echo "setup PATH"
 export PATH=$PATH:$SOURCE_DIR/node_modules/.bin
 
 echo "Build application"
-npm build
+npm run build
 
 if [ -d "$DIST_DIR" ]; then
     echo "Copying Scene Controller to GSAAS Repo"

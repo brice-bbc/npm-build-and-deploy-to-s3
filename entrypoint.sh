@@ -62,7 +62,10 @@ echo "Change directory to Source"
 cd $SOURCE_DIR
 
 echo "Install Node-gyp"
-npm i -g node-gyp parcel
+npm i -g node-gyp
+
+echo "Install Parcel"
+npm i -g parcel-bundler
 
 echo "Install all packages"
 npm install

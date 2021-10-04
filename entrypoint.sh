@@ -68,7 +68,7 @@ echo "Install all packages"
 npm install
 
 echo "Build application"
-parcel build index.html
+parcel build
 
 if [ -d "$DIST_DIR" ]; then
     echo "Copying Scene Controller to GSAAS Repo"

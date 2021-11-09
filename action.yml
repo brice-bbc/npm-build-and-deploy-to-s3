@@ -1,6 +1,6 @@
-name: "AWS S3 sync with Parcel using private npm packages"
-description: "Builds with Parcel and private packages either private npm or GitHub packages in a private org"
-author: brockmdavis
+name: "Publish to AWS S3"
+description: "Builds with private packages either private npm or GitHub packages in a private org"
+author: brice-bbc
 runs:
   using: docker
   image: Dockerfile

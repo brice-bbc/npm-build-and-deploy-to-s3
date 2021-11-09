@@ -44,6 +44,11 @@ if [ -z "$ORG_NAME" ]; then
   exit 1
 fi
 
+if [ -z "$BUILD_CMD" ]; then
+  echo "BUILD_CMD is not set. Quitting."
+  exit 1
+fi
+
 
 mkdir -p ~/.aws
 touch ~/.aws/credentials
@@ -68,7 +73,7 @@ echo "setup PATH"
 export PATH=$PATH:$SOURCE_DIR/node_modules/.bin
 
 echo "Build application"
-npm run build
+npm run $BUILD_CMD
 
 if [ -d "$DIST_DIR" ]; then
     echo "Copying app to S3"

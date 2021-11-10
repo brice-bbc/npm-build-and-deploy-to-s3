@@ -32,21 +32,9 @@ if [ -z "$DIST_DIR" ]; then
   exit 1
 fi
 
-
-if [ -z "$CI_CD_TOKEN" ]; then
-  echo "CI_CD_TOKEN is not set. Quitting."
-  exit 1
-fi
-
-
-if [ -z "$ORG_NAME" ]; then
-  echo "ORG_NAME is not set. Quitting."
-  exit 1
-fi
-
 if [ -z "$BUILD_CMD" ]; then
-  echo "BUILD_CMD is not set. Quitting."
-  exit 1
+  echo "BUILD_CMD is not set. Defaulting to build."
+  BUILD_CMD=build
 fi
 
 
@@ -57,11 +45,12 @@ echo "[default]
 aws_access_key_id = ${AWS_ACCESS_KEY_ID}
 aws_secret_access_key = ${AWS_SECRET_ACCESS_KEY}" > ~/.aws/credentials
 
-echo "Setting .npmrc file"
-
-echo "//npm.pkg.github.com/:_authToken=${CI_CD_TOKEN}
-@${ORG_NAME}:registry=https://npm.pkg.github.com
-registry=https://registry.npmjs.org/" > ~/.npmrc
+if [ -z "$CI_CD_TOKEN" ] && [ -z "$ORG_NAME" ]; then
+  echo "Setting .npmrc file"
+  echo "//npm.pkg.github.com/:_authToken=${CI_CD_TOKEN}
+  @${ORG_NAME}:registry=https://npm.pkg.github.com
+  registry=https://registry.npmjs.org/" > ~/.npmrc
+fi
 
 echo "Change directory to Source"
 cd $SOURCE_DIR
